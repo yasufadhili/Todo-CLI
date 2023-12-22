@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native';
 import { Divider, Icon, Layout, Text, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 
 const BackIcon = (props) => (
-  <Icon {...props} name='arrow-back' />
+  <Icon {...props} name='arrow-left' />
 );
 
 export const SigninScreen = ({ navigation }) => {
