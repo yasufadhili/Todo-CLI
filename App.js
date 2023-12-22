@@ -8,9 +8,11 @@ import { MaterialIconsPack } from './constants/material-icons';
 import { IconRegistry } from '@ui-kitten/components';
 import Navigation from './navigation';
 import { ThemeContext } from './context/ThemeContext';
+import WelcomeScreen from './screens/WelcomeScreen';
+import { PaperProvider } from 'react-native-paper';
 
 
-export default () => {
+const App = () => {
 
   const [theme, setTheme] = useState("dark");
 
@@ -21,12 +23,16 @@ export default () => {
 
   return(
     <>
-      <IconRegistry icons={[FeatherIconsPack, MaterialIconsPack]} />
-      <ThemeContext.Provider value={{theme, toggleTheme}}>
-      <ApplicationProvider {...eva} theme={eva[theme]}>
-        <Navigation />
-      </ApplicationProvider>
-      </ThemeContext.Provider>
+      <PaperProvider>
+        <IconRegistry icons={[FeatherIconsPack, MaterialIconsPack]} />
+        <ThemeContext.Provider value={{theme, toggleTheme}}>
+        <ApplicationProvider {...eva} theme={eva[theme]}>
+          <WelcomeScreen />
+        </ApplicationProvider>
+        </ThemeContext.Provider>
+      </PaperProvider>
     </>
   );
 };
+
+export default App;
