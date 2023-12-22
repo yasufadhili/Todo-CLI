@@ -1,3 +1,12 @@
+
+/****
+ * 
+ * THIS LED TO ISSUE WITH THEME SWITCHING BY TOGGLE
+ */
+
+
+
+
 //const { getDefaultConfig } = require('metro-config'); // If you have a bare react-native project
 const { getDefaultConfig } = require("expo/metro-config"); // If your project is an expo one
 
