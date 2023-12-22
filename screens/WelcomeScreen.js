@@ -1,26 +1,35 @@
-import React, { useContext } from 'react';
-import { SafeAreaView } from 'react-native';
-import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
-import { ThemeContext } from '../context/ThemeContext';
 
-export const WelcomeScreen = ({ navigation }) => {
+import { ImageBackground, View } from "react-native";
 
-  const navigateSignin = () => {
-    navigation.navigate('SigninScreen');
-  };
 
-  const themeContext = useContext(ThemeContext);
+const WelcomeScreen =() => {
+    return (
+        <ImageBackground
+            source={require("../assets/images/welcome-bg.jpg")}
+            style={{ 
+                width: "100%",
+                height: "100%",
+                justifyContent: "center" 
+            }}
+            blurRadius={10}
+        >
 
-  const switchTheme = () => {
-    themeContext.toggleTheme
-  }
+            <View style={{
+                height: "70%",
+                width: "95%",
+                backgroundColor: "#11011e",
+                alignSelf: "center",
+                borderWidth: 1,
+                borderColor: "#1D0054",
+                borderRadius: 12,
+            }}>
 
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Button style={{ marginVertical: 4 }} onPress={navigateSignin}>OPEN Signin</Button>
-        <Button style={{ marginVertical: 4 }} onPress={switchTheme}>TOGGLE THEME</Button>
-      </Layout>
-    </SafeAreaView>
-  );
-};
+                
+
+            </View>
+
+        </ImageBackground>
+    );
+}
+
+export default WelcomeScreen;
