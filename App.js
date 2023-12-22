@@ -6,14 +6,14 @@ import {default as theme} from "./constants/COLORS.json";
 import { FeatherIconsPack } from './constants/feather-icons';
 import { MaterialIconsPack } from './constants/material-icons';
 import { IconRegistry } from '@ui-kitten/components';
-import { WelcomeScreen } from './screens/WelcomeScreen';
+import Navigation from './navigation';
 
 
 export default () => (
   <>
     <IconRegistry icons={[FeatherIconsPack, MaterialIconsPack]} />
     <ApplicationProvider {...eva} theme={{ ...eva.dark, ...theme }}>
-      <WelcomeScreen />
+      <Navigation />
     </ApplicationProvider>
   </>
 );
